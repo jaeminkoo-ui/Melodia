@@ -706,7 +706,6 @@ img {
   font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.7;
-  white-space: pre-line;
 }
 
 .content-image {
@@ -1343,6 +1342,20 @@ img {
 
   .content-row.reverse {
     flex-direction: column;
+  }
+
+  /* --- What We Do (About page full-width section) --- */
+  .what-we-do-text {
+    width: 100% !important;
+    padding: 40px 20px !important;
+  }
+
+  .what-we-do-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%) !important;
+  }
+
+  .what-we-do-section {
+    min-height: 400px !important;
   }
 
   .content-image {
