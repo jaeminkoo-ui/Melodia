@@ -4,7 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap');
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -521,7 +523,7 @@ img {
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
@@ -1022,9 +1024,17 @@ img {
   border-color: var(--accent);
 }
 
-.tier-card.featured .tier-price { color: var(--white); }
-.tier-card.featured .tier-name { color: rgba(255,255,255,0.8); }
-.tier-card.featured .tier-desc { color: rgba(255,255,255,0.73); }
+.tier-card.featured .tier-price {
+  color: var(--white);
+}
+
+.tier-card.featured .tier-name {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tier-card.featured .tier-desc {
+  color: rgba(255, 255, 255, 0.73);
+}
 
 .tier-card.featured .tier-btn {
   background: var(--white);
@@ -1080,5 +1090,460 @@ img {
 /* ========================================
    Utilities
    ======================================== */
-.text-center { text-align: center; }
-.w-full { width: 100%; }
+.text-center {
+  text-align: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* ========================================
+   Mobile Nav Toggle
+   ======================================== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+  z-index: 200;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark);
+  transition: all 0.3s;
+}
+
+.nav-checkbox {
+  display: none;
+}
+
+/* ========================================
+   Responsive – Tablet (≤1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+  .header {
+    padding: 8px 32px;
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 60px 32px;
+  }
+
+  .hero-overlay {
+    padding: 60px 32px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-sub {
+    padding: 60px 32px;
+    height: auto;
+    min-height: 280px;
+  }
+
+  .hero-sub .hero-title {
+    font-size: 36px;
+  }
+
+  .content-row {
+    padding: 60px 32px;
+    gap: 40px;
+  }
+
+  .content-image {
+    width: 360px;
+    height: 300px;
+  }
+
+  .cta-card {
+    padding: 48px 32px;
+  }
+
+  .cta-card .cta-title {
+    font-size: 28px;
+  }
+
+  .footer {
+    padding: 48px 32px 24px 32px;
+  }
+
+  .footer-top {
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand {
+    width: 100%;
+  }
+
+  .form-fields {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .form-section {
+    padding: 60px 32px;
+  }
+}
+
+/* ========================================
+   Responsive – Mobile (≤768px)
+   ======================================== */
+@media (max-width: 768px) {
+
+  /* --- Mobile Nav --- */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    padding: 80px 32px 32px;
+    gap: 24px;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 150;
+  }
+
+  .nav-checkbox:checked~.nav-links {
+    right: 0;
+  }
+
+  .nav-checkbox:checked~.nav-toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-checkbox:checked~.nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-checkbox:checked~.nav-toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+
+  /* --- Header --- */
+  .header {
+    padding: 8px 20px;
+  }
+
+  .logo-area {
+    width: 120px;
+    height: 48px;
+  }
+
+  .logo-area img {
+    width: 120px;
+    height: 48px;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    height: 400px;
+  }
+
+  .hero-overlay {
+    padding: 40px 20px;
+    gap: 16px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+  }
+
+  .hero-sub {
+    height: auto;
+    min-height: 240px;
+    padding: 48px 20px;
+  }
+
+  .hero-sub .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-sub .hero-desc {
+    font-size: 15px;
+  }
+
+  /* --- Sections --- */
+  .section {
+    padding: 48px 20px;
+  }
+
+  .section-center {
+    gap: 32px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+  }
+
+  /* --- Card Grids --- */
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cards-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* --- Content Rows (About page) --- */
+  .content-row {
+    flex-direction: column;
+    padding: 48px 20px;
+    gap: 32px;
+  }
+
+  .content-row.reverse {
+    flex-direction: column;
+  }
+
+  .content-image {
+    width: 100%;
+    height: 280px;
+  }
+
+  .content-title {
+    font-size: 26px;
+  }
+
+  /* --- Event Cards --- */
+  .event-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .event-date {
+    flex-direction: row;
+    gap: 8px;
+    width: auto;
+    align-items: baseline;
+  }
+
+  .event-day {
+    font-size: 28px;
+  }
+
+  .event-title {
+    font-size: 18px;
+  }
+
+  /* --- CTA --- */
+  .cta-card {
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .cta-card .cta-title {
+    font-size: 24px;
+  }
+
+  .cta-card .cta-desc {
+    font-size: 15px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    justify-content: center;
+    width: 100%;
+    padding: 14px 24px;
+  }
+
+  /* --- Donate Tiers --- */
+  .tier-price {
+    font-size: 32px;
+  }
+
+  /* --- Form --- */
+  .form-section {
+    padding: 48px 20px;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+
+  .form-fields {
+    width: 100%;
+  }
+
+  /* --- Stats --- */
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .stat-card {
+    padding: 24px;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 40px 20px 24px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-brand {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .footer-legal {
+    gap: 16px;
+  }
+
+  /* --- Member Cards --- */
+  .member-photo {
+    height: 200px;
+  }
+
+  /* --- Section Split Header --- */
+  .section-header-split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* --- Other Buttons --- */
+  .other-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-dark,
+  .btn-dark-outline {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* --- Blog Cards --- */
+  .blog-card img {
+    height: 180px;
+  }
+
+  /* --- About Stat Card --- */
+  .about-stat-num {
+    font-size: 28px;
+  }
+}
+
+/* ========================================
+   Responsive – Small Phones (≤480px)
+   ======================================== */
+@media (max-width: 480px) {
+  .hero {
+    height: 340px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .hero-sub .hero-title {
+    font-size: 24px;
+  }
+
+  .section {
+    padding: 36px 16px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .cards-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .content-row {
+    padding: 36px 16px;
+  }
+
+  .content-image {
+    height: 220px;
+  }
+
+  .cta-card .cta-title {
+    font-size: 22px;
+  }
+
+  .footer {
+    padding: 32px 16px 20px;
+  }
+
+  .header {
+    padding: 8px 16px;
+  }
+
+  .form-section {
+    padding: 36px 16px;
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+
+  .event-card {
+    padding: 20px;
+  }
+
+  .tier-price {
+    font-size: 28px;
+  }
+}
