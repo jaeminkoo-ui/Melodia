@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Melodia</title>
+    <meta name="description"
+        content="Join Melodia as a volunteer, mentor, or partner — help us bring music to every child.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo-area">
+            <img src="assets/newlogo.jpg" alt="Melodia Logo">
+        </a>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="members.html">Members</a>
+            <a href="events.html">Events</a>
+            <a href="blog.html">Blog</a>
+            <a href="join.html" class="active">Join</a>
+            <a href="donate.html">Donate</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-sub">
+        <span class="hero-label">Get Involved</span>
+        <h1 class="hero-title">Make a Difference Through Music</h1>
+        <p class="hero-desc">Whether you're a musician, a parent, or simply someone who believes in music's power —
+            there's a place for you at Melodia.</p>
+    </section>
+
+    <!-- Ways to Get Involved -->
+    <section class="section section-bg section-center">
+        <div class="section-header">
+            <span class="section-label">Ways to Help</span>
+            <h2 class="section-title">How You Can Get Involved</h2>
+        </div>
+        <div class="cards-grid">
+            <div class="join-card">
+                <i class="lucide lucide-music join-card-icon" style="font-size:28px;"></i>
+                <h3 class="join-card-title">Become a Mentor</h3>
+                <p class="join-card-desc">Share your musical skills by teaching children one-on-one. We provide all the
+                    materials — you provide the passion.</p>
+            </div>
+            <div class="join-card">
+                <i class="lucide lucide-calendar join-card-icon" style="font-size:28px;"></i>
+                <h3 class="join-card-title">Volunteer at Events</h3>
+                <p class="join-card-desc">Help organize recitals, donation drives, and community workshops. Every
+                    helping hand makes our events possible.</p>
+            </div>
+            <div class="join-card">
+                <i class="lucide lucide-briefcase join-card-icon" style="font-size:28px;"></i>
+                <h3 class="join-card-title">Partner With Us</h3>
+                <p class="join-card-desc">Schools, businesses, and organizations can partner with Melodia to expand
+                    music access in their communities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="form-section">
+        <h2 class="form-title">Ready to Join?</h2>
+        <p class="form-desc">Fill out the form below and our team will reach out to you within 48 hours with next steps.
+        </p>
+        <form class="form-fields"
+            onsubmit="event.preventDefault(); alert('Thank you for your interest! We will contact you soon.');">
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-input" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Phone</label>
+                <input type="tel" class="form-input" placeholder="(000) 000-0000">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Area of Interest</label>
+                <input type="text" class="form-input" placeholder="e.g. Mentoring, Event Volunteering, Partnerships">
+            </div>
+            <button type="submit" class="btn-submit">Submit Application</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/melodianew.jpg" alt="Melodia">
+                <p class="footer-tagline">A nonprofit organization opening every child's potential through the power of
+                    music.</p>
+                <div class="footer-social">
+                    <div class="social-icon"><i class="lucide lucide-instagram" style="font-size:16px;"></i></div>
+                    <div class="social-icon"><i class="lucide lucide-youtube" style="font-size:16px;"></i></div>
+                    <div class="social-icon"><i class="lucide lucide-facebook" style="font-size:16px;"></i></div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <span class="footer-col-title">Programs</span>
+                <a href="#">First Notes</a>
+                <a href="#">Rising Ensemble</a>
+                <a href="#">Virtuoso Path</a>
+                <a href="#">Summer Camp</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-col-title">About</span>
+                <a href="about.html">Our Story</a>
+                <a href="members.html">Team</a>
+                <a href="#">Partners</a>
+                <a href="#">Annual Report</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-col-title">Get Involved</span>
+                <a href="donate.html">Donate</a>
+                <a href="join.html">Volunteer</a>
+                <a href="events.html">Events</a>
+                <a href="#">Newsletter</a>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom">
+            <span class="footer-copyright">2024 Melodia Foundation. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

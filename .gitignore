@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Misc
+*.pen
+concept-*.png
+concepts/
+docs/
+.claude/
+.playwright-mcp/
+node_modules/
