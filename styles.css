@@ -139,9 +139,9 @@ img {
 }
 
 .hero-title {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 72px;
-  font-weight: 700;
+  font-weight: normal;
   color: var(--white);
   text-align: center;
   letter-spacing: -1px;
