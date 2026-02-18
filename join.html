@@ -96,27 +96,74 @@
         <h2 class="form-title">Ready to Join?</h2>
         <p class="form-desc">Fill out the form below and our team will reach out to you within 48 hours with next steps.
         </p>
-        <form class="form-fields"
-            onsubmit="event.preventDefault(); alert('Thank you for your interest! We will contact you soon.');">
+        <form id="join-form" class="form-fields">
             <div class="form-group">
                 <label class="form-label">Full Name</label>
-                <input type="text" class="form-input" placeholder="Your full name">
+                <input type="text" name="name" class="form-input" placeholder="Your full name" required>
             </div>
             <div class="form-group">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-input" placeholder="your@email.com">
+                <input type="email" name="email" class="form-input" placeholder="your@email.com" required>
             </div>
             <div class="form-group">
                 <label class="form-label">Phone</label>
-                <input type="tel" class="form-input" placeholder="(000) 000-0000">
+                <input type="tel" name="phone" class="form-input" placeholder="(000) 000-0000">
             </div>
             <div class="form-group">
                 <label class="form-label">Area of Interest</label>
-                <input type="text" class="form-input" placeholder="e.g. Mentoring, Event Volunteering, Partnerships">
+                <input type="text" name="interest" class="form-input"
+                    placeholder="e.g. Mentoring, Event Volunteering, Partnerships">
             </div>
-            <button type="submit" class="btn-submit">Submit Application</button>
+            <button type="submit" class="btn-submit" id="submit-btn">Submit Application</button>
+            <p id="form-status" style="margin-top: 12px; text-align: center; display: none;"></p>
         </form>
     </section>
+
+    <script>
+        document.getElementById('join-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submit-btn');
+            const status = document.getElementById('form-status');
+            const form = e.target;
+
+            // Disable button and show loading
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            status.style.display = 'none';
+
+            const data = {
+                name: form.name.value,
+                email: form.email.value,
+                phone: form.phone.value,
+                interest: form.interest.value,
+            };
+
+            try {
+                const res = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+
+                if (res.ok) {
+                    status.textContent = '✓ Thank you! Your application has been submitted. We will contact you soon.';
+                    status.style.color = '#22c55e';
+                    status.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                status.textContent = '✗ Something went wrong. Please try again or email us at join@melodiamusic.org';
+                status.style.color = '#ef4444';
+                status.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Submit Application';
+            }
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="footer">
