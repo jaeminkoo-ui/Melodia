@@ -17,7 +17,7 @@ export default async function handler(req, res) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Melodia Website <noreply@send.melodiamusic.org>',
+      from: 'Melodia Website <noreply@melodiamusic.org>',
       to: ['join@melodiamusic.org'],
       replyTo: email,
       subject: `New Join Request from ${name}`,
@@ -47,13 +47,13 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
-      return res.status(500).json({ error: 'Failed to send email' });
+      console.error('Resend error:', JSON.stringify(error));
+      return res.status(500).json({ error: 'Failed to send email', details: error.message });
     }
 
     return res.status(200).json({ success: true, id: data.id });
   } catch (err) {
-    console.error('Server error:', err);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error('Server error:', err.message);
+    return res.status(500).json({ error: 'Internal server error', details: err.message });
   }
 }
