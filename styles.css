@@ -892,7 +892,7 @@ img {
 
 .blog-card-gallery .blog-gallery-main {
   grid-column: 1 / -1;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 2;
   object-position: top;
 }
 
