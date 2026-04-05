@@ -794,7 +794,7 @@ img {
    ======================================== */
 .event-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
   padding: 32px;
   background: var(--white);
