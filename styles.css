@@ -801,6 +801,15 @@ img {
   border: 1px solid var(--border);
 }
 
+.event-img {
+  width: 240px;
+  max-height: 340px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
 .event-date {
   display: flex;
   flex-direction: column;
