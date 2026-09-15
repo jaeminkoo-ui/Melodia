@@ -1062,24 +1062,6 @@ img {
   opacity: 0.85;
 }
 
-.btn-dark-outline {
-  display: inline-flex;
-  align-items: center;
-  padding: 14px 28px;
-  background: transparent;
-  color: var(--dark);
-  font-size: 14px;
-  font-weight: 500;
-  border: 1px solid var(--dark);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.btn-dark-outline:hover {
-  background: var(--dark);
-  color: var(--white);
-}
-
 /* ========================================
    Utilities
    ======================================== */
@@ -1473,8 +1455,7 @@ img {
     width: 100%;
   }
 
-  .btn-dark,
-  .btn-dark-outline {
+  .btn-dark {
     justify-content: center;
     width: 100%;
   }
